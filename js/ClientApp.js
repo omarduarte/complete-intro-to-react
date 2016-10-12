@@ -1,7 +1,8 @@
-/* global React ReactDOM */
+var React = require('react')
+var ReactDOM = require('react-dom')
+var MyTitle = require('./MyTitle')
 
 var div = React.DOM.div
-var MyTitle = require('./MyTitle')
 
 var MyTitleFact = React.createFactory(MyTitle)
 var ce = React.createElement
