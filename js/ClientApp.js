@@ -5,15 +5,20 @@ var MyTitle = React.createClass({
 	render() {
 		return (
 			div(null, 
-				h1(null, this.props.title)
+				h1({style: {color: this.props.color}}, this.props.title)
 			)
 		)
 	}
 })
 
+var MyTitleFact = React.createFactory(MyTitle)
+var ce = React.createElement
+
 var MyFirstcomponent = (
 	div(null,
-		React.createElement(MyTitle, {title: 'use props everywhere!'})
+		MyTitleFact({title: 'Props are this best', color: 'rebeccapurple'}),
+		React.createElement(MyTitle, {title: 'use props everywhere!', color: 'mediumaquamarine'}),
+		ce(MyTitle, {title: 'Yo yo props in the house', color: 'peru'})
 	)
 )
 
